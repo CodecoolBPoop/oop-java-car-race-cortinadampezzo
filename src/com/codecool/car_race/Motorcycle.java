@@ -1,21 +1,32 @@
 package com.codecool.car_race;
 
-// Speed is 100km/h. If it rains, travels with 5-50km/h slower (randomly). Doesn't care about trucks.
+import java.util.Random;
+
 public class Motorcycle extends Vehicle {
 
-    // The number of the instance created. Used for its name.
-    Integer motorCycleNumber;
+    private static int motorCycleNumber = 1;
 
-    // Are called "Motorcycle 1", "Motorcycle 2", "Motorcycle 3",... Unique.
-    String name;
+    public Motorcycle() {
+        generateName();
+    }
 
-    @Override
-    void moveForAnHour(Race race) {
-
+    private void generateName() {
+        String name = "Motorcycle " + motorCycleNumber++;
+        setName(name);
     }
 
     @Override
-    void prepareForLap(Race race) {
+    public void prepareForLap(Race race) {
+        if (!Weather.isRaining()) {
+            setSpeed(100);
+        } else {
+            Random random = new Random();
+            setSpeed(random.nextInt(45) + 50);
+        }
+    }
 
+    @Override
+    public void moveForAnHour(Race race) {
+        setDistanceTravelled(getSpeed());
     }
 }

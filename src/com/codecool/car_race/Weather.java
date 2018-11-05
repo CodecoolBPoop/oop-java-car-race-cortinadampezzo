@@ -10,17 +10,12 @@ public class Weather {
     static void setRaining() {
 
         Random random = new Random();
-        Integer chanceOfRaining = random.nextInt(100) + 1;
-
-        if (chanceOfRaining <= 30) {
-            isRaining = true;
-        } else {
-            isRaining = false;
-        }
+        int chanceOfRaining = random.nextInt(100) + 1;
+        isRaining = chanceOfRaining <= 30;
 
     }
 
-    boolean isRaining() {
+    static boolean isRaining() {
         return isRaining;
     }
 

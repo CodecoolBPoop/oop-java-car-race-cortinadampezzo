@@ -15,13 +15,12 @@ public class Car extends Vehicle {
         generateName();
     }
 
-    private String generateName() {
+    private void generateName() {
         Random random = new Random();
         String firstName = carNames[random.nextInt(30)];
         String secondName = carNames[random.nextInt(30)];
         String name = firstName + " " + secondName;
         setName(name);
-        return name;
     }
 
     @Override

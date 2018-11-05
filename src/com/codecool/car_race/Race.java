@@ -22,8 +22,9 @@ public class Race {
             for (Vehicle vehicle : vehicles) {
                 vehicle.moveForAnHour(this);
                 vehicle.prepareForLap(this);
+//                System.out.println(vehicle.getSpeed());
 //                System.out.println(vehicle.getDistanceTravelled());
-//                System.out.println(vehicle.getName());
+                System.out.println(vehicle.getName());
             }
         }
     }
