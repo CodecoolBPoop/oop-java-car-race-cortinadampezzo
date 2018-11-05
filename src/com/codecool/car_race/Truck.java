@@ -6,6 +6,7 @@ public class Truck extends Vehicle {
 
     private static boolean isBrokenDown;
 
+    // This method is not working properly.
     static void setBrokenDown() {
         Random random = new Random();
         int chanceOfBrokenDown = random.nextInt(100) + 1;
