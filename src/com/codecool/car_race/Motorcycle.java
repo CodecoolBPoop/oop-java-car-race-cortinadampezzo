@@ -8,6 +8,7 @@ public class Motorcycle extends Vehicle {
 
     public Motorcycle() {
         generateName();
+        this.type = "motorcycle";
     }
 
     private void generateName() {

@@ -7,6 +7,10 @@ public class Truck extends Vehicle {
     // Holds how long its still broken down.
     private Integer breakDownTurnsLeft;
 
+    public Truck() {
+        this.type = "truck";
+    }
+
     @Override
     void moveForAnHour(Race race) {
 

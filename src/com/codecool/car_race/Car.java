@@ -13,6 +13,7 @@ public class Car extends Vehicle {
 
     public Car() {
         generateName();
+        this.type = "car";
     }
 
     private void generateName() {

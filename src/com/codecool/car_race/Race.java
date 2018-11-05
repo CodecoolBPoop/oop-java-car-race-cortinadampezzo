@@ -24,14 +24,16 @@ public class Race {
                 vehicle.prepareForLap(this);
 //                System.out.println(vehicle.getSpeed());
 //                System.out.println(vehicle.getDistanceTravelled());
-                System.out.println(vehicle.getName());
+//                System.out.println(vehicle.getName());
             }
         }
     }
 
     // Prints each vehicle's name, distance traveled and type.
     void printRaceResults() {
-
+        for (Vehicle vehicle : vehicles) {
+            System.out.println(vehicle.getName() + ": " + vehicle.getDistanceTravelled() + "km; " + vehicle.type);
+        }
     }
 
     // Returns true if there is a broken truck on track.

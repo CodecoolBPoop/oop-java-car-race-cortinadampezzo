@@ -5,6 +5,7 @@ public abstract class Vehicle {
     private int distanceTravelled;
     private int speed;
     private String name;
+    String type;
 
     // The vehicle travels for an hour. It increases the distance traveled.
     // Call this from the Race::simulateRace() only!
@@ -35,5 +36,9 @@ public abstract class Vehicle {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getType() {
+        return type;
     }
 }
