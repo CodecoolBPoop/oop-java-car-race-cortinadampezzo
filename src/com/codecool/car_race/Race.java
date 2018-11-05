@@ -19,12 +19,10 @@ public class Race {
     void simulateRace() {
         for (int i = 0; i < 50; i++) {
             Weather.setRaining();
+            Truck.setBrokenDown();
             for (Vehicle vehicle : vehicles) {
-                vehicle.moveForAnHour(this);
                 vehicle.prepareForLap(this);
-//                System.out.println(vehicle.getSpeed());
-//                System.out.println(vehicle.getDistanceTravelled());
-//                System.out.println(vehicle.getName());
+                vehicle.moveForAnHour(this);
             }
         }
     }
@@ -37,7 +35,12 @@ public class Race {
     }
 
     // Returns true if there is a broken truck on track.
-    boolean isThereABrokenTruck() {
+    static boolean isThereABrokenTruck() {
+        for (Vehicle vehicle : vehicles) {
+            if (vehicle instanceof Truck && Truck.isBrokenDown()) {
+                return true;
+            }
+        }
         return false;
     }
 

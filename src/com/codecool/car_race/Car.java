@@ -18,15 +18,12 @@ public class Car extends Vehicle {
 
     private void generateName() {
         Random random = new Random();
-        String firstName = carNames[random.nextInt(30)];
-        String secondName = carNames[random.nextInt(30)];
-        String name = firstName + " " + secondName;
-        setName(name);
+        setName(carNames[random.nextInt(30)] + " " + carNames[random.nextInt(30)]);
     }
 
     @Override
     public void prepareForLap(Race race) {
-        if (race.isThereABrokenTruck()) {
+        if (Race.isThereABrokenTruck()) {
             setSpeed(75);
         } else {
             Random random = new Random();

@@ -12,9 +12,9 @@ public class Motorcycle extends Vehicle {
     }
 
     private void generateName() {
-        String name = "Motorcycle " + motorCycleNumber++;
-        setName(name);
+        setName("Motorcycle " + motorCycleNumber++);
     }
+
 
     @Override
     public void prepareForLap(Race race) {

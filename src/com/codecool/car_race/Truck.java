@@ -1,23 +1,43 @@
 package com.codecool.car_race;
 
-// Speed: 100km/h. 5% chance of breaking down for 2 turns.
-// Truck drivers are boring. They call all their trucks a random number between 0 and 1000.
+import java.util.Random;
+
 public class Truck extends Vehicle {
 
-    // Holds how long its still broken down.
-    private Integer breakDownTurnsLeft;
+    private static boolean isBrokenDown;
+
+    static void setBrokenDown() {
+        Random random = new Random();
+        int chanceOfBrokenDown = random.nextInt(100) + 1;
+        if (chanceOfBrokenDown <= 5) {
+            isBrokenDown = true;
+        } else {
+            isBrokenDown = false;
+        }
+    }
+
+    static boolean isBrokenDown() {
+        return isBrokenDown;
+    }
 
     public Truck() {
+        generateName();
+        setBrokenDown();
         this.type = "truck";
     }
 
-    @Override
-    void moveForAnHour(Race race) {
-
+    private void generateName() {
+        Random random = new Random();
+        setName("Truck " + random.nextInt(1000) + 1);
     }
 
     @Override
-    void prepareForLap(Race race) {
-
+    public void prepareForLap(Race race) {
+        if (!isBrokenDown()) {
+            setSpeed(100);
+        } else {
+            setSpeed(0);
+        }
     }
+
 }
