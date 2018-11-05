@@ -1,13 +1,26 @@
 package com.codecool.car_race;
 
+import java.util.Random;
+
 public class Weather {
 
-    // 30% chance of rain.
-    private void setRaining() {
+    private boolean isRaining;
+
+    void setRaining() {
+
+        Random random = new Random();
+        Integer chanceOfRaining = random.nextInt(100) + 1;
+
+        if (chanceOfRaining <= 30) {
+            isRaining = true;
+        } else {
+            isRaining = false;
+        }
 
     }
 
-    // Is it raining currently?
-    private boolean isRaining;
+    boolean isRaining() {
+        return isRaining;
+    }
 
 }
