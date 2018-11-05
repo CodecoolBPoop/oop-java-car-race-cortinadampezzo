@@ -7,7 +7,7 @@ public abstract class Vehicle {
 
     // The vehicle travels for an hour. It increases the distance traveled.
     // Call this from the Race::simulateRace() only!
-    private void moveForAnHour() {
+    void moveForAnHour(Race race) {
 
     }
 

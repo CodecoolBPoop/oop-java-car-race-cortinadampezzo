@@ -2,11 +2,12 @@ package com.codecool.car_race;
 
 import java.util.Random;
 
+
 public class Weather {
 
-    private boolean isRaining;
+    private static boolean isRaining;
 
-    void setRaining() {
+    static void setRaining() {
 
         Random random = new Random();
         Integer chanceOfRaining = random.nextInt(100) + 1;

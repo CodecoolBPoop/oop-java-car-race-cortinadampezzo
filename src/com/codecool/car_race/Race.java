@@ -1,12 +1,28 @@
 package com.codecool.car_race;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class Race {
 
-    // Simulates the race by
-    // - calling moveForAnHour() on every vehicle 50 times
-    // - setting whether its raining.
-    void simulateRace() {
+    private static List<Vehicle> vehicles = new ArrayList<>();
 
+    void createVehicles() {
+        for (int i = 0; i < 10; i++) {
+            vehicles.add(new Car());
+            vehicles.add(new Motorcycle());
+            vehicles.add(new Truck());
+        }
+    }
+
+    void simulateRace() {
+        for (int i = 0; i < 50; i++) {
+            Weather.setRaining();
+            for (Vehicle vehicle : vehicles) {
+                vehicle.moveForAnHour(this);
+            }
+        }
     }
 
     // Prints each vehicle's name, distance traveled and type.
