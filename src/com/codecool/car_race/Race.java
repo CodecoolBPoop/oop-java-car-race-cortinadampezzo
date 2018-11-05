@@ -27,14 +27,12 @@ public class Race {
         }
     }
 
-    // Prints each vehicle's name, distance traveled and type.
     void printRaceResults() {
         for (Vehicle vehicle : vehicles) {
             System.out.println(vehicle.getName() + ": " + vehicle.getDistanceTravelled() + "km; " + vehicle.type);
         }
     }
 
-    // Returns true if there is a broken truck on track.
     static boolean isThereABrokenTruck() {
         for (Vehicle vehicle : vehicles) {
             if (vehicle instanceof Truck && Truck.isBrokenDown()) {

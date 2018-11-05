@@ -31,9 +31,4 @@ public class Car extends Vehicle {
         }
     }
 
-    @Override
-    public void moveForAnHour(Race race) {
-        setDistanceTravelled(getSpeed());
-    }
-
 }
