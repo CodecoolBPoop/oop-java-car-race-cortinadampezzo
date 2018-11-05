@@ -7,4 +7,13 @@ public class Truck extends Vehicle {
     // Holds how long its still broken down.
     private Integer breakDownTurnsLeft;
 
+    @Override
+    void moveForAnHour(Race race) {
+
+    }
+
+    @Override
+    void prepareForLap(Race race) {
+
+    }
 }

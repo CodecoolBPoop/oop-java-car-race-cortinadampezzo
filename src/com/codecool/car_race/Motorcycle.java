@@ -9,4 +9,13 @@ public class Motorcycle extends Vehicle {
     // Are called "Motorcycle 1", "Motorcycle 2", "Motorcycle 3",... Unique.
     String name;
 
+    @Override
+    void moveForAnHour(Race race) {
+
+    }
+
+    @Override
+    void prepareForLap(Race race) {
+
+    }
 }

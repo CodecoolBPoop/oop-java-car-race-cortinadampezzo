@@ -21,6 +21,9 @@ public class Race {
             Weather.setRaining();
             for (Vehicle vehicle : vehicles) {
                 vehicle.moveForAnHour(this);
+                vehicle.prepareForLap(this);
+//                System.out.println(vehicle.getDistanceTravelled());
+//                System.out.println(vehicle.getName());
             }
         }
     }
@@ -31,8 +34,8 @@ public class Race {
     }
 
     // Returns true if there is a broken truck on track.
-    private boolean isThereABrokenTruck() {
-        return true;
+    boolean isThereABrokenTruck() {
+        return false;
     }
 
 }

@@ -1,13 +1,42 @@
 package com.codecool.car_race;
 
-// If there is a broken down Truck on the track, then limit the max speed of cars to 75 km/h.
+import java.util.Random;
+
 public class Car extends Vehicle {
 
-    // The normal speed of the car. Set to a random number in the constructor between 80-110km/h.
-    Integer normalSpeed;
+    private String[] carNames = {
+            "Albatross", "Blast", "Capital", "Centurion", "Cobra", "Crux", "Curiosity", "Daydream", "Dusk",
+            "Dynamics", "Empire", "Eon", "Essence", "Flow", "Fragment", "Ivory", "Liberty", "Momentum", "Motive",
+            "Paladin", "Parallel", "Passion", "Roamer", "Silver", "Thunder", "Tigress", "Trailblazer", "Viper",
+            "Voyage", "Zeal"
+    };
 
-    // Make a list from the words here: http://www.fantasynamegenerators.com/car-names.php
-    // and pick 2 randomly for each instance.
-    String name;
+    public Car() {
+        generateName();
+    }
+
+    private String generateName() {
+        Random random = new Random();
+        String firstName = carNames[random.nextInt(30)];
+        String secondName = carNames[random.nextInt(30)];
+        String name = firstName + " " + secondName;
+        setName(name);
+        return name;
+    }
+
+    @Override
+    public void prepareForLap(Race race) {
+        if (race.isThereABrokenTruck()) {
+            setSpeed(75);
+        } else {
+            Random random = new Random();
+            setSpeed(random.nextInt(30) + 80);
+        }
+    }
+
+    @Override
+    public void moveForAnHour(Race race) {
+        setDistanceTravelled(getSpeed());
+    }
 
 }
