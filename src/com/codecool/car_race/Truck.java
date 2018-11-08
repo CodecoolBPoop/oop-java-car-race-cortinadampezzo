@@ -22,14 +22,14 @@ public class Truck extends Vehicle {
     }
 
     public Truck() {
-        generateName();
+        setName(generateName());
         setBrokenDown();
         this.type = "truck";
     }
 
-    private void generateName() {
+    private static String generateName() {
         Random random = new Random();
-        setName("Truck " + random.nextInt(1000) + 1);
+        return "Truck " + random.nextInt(1000) + 1;
     }
 
     @Override

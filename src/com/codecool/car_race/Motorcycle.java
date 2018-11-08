@@ -7,12 +7,12 @@ public class Motorcycle extends Vehicle {
     private static int motorCycleNumber = 1;
 
     public Motorcycle() {
-        generateName();
+        setName(generateName());
         this.type = "motorcycle";
     }
 
-    private void generateName() {
-        setName("Motorcycle " + motorCycleNumber++);
+    private static String generateName() {
+        return "Motorcycle " + motorCycleNumber++;
     }
 
 
